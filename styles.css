@@ -1,0 +1,23 @@
+table{
+    width: 100%;
+}
+
+th{
+    text-transform: uppercase;
+    text-align: start;
+}
+
+::backdrop{
+    background-color: black;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-item{
+    display: flex;
+    flex-direction: column;
+}
