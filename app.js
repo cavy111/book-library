@@ -30,22 +30,25 @@ openDialogBtn.addEventListener('click', ()=>{
     dialog.showModal()
 })
 
-function Book(title,author,pages,isread){
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.isread = isread
-    this.id = crypto.randomUUID()
+class Book{
+    constructor(title,author,pages,isread){
+        this.title=title
+        this.author=author
+        this.pages=pages
+        this.isread=isread
+        this.id = crypto.randomUUID()
+    }
 
-    this.info = function(){
+    info = function(){
         return `${this.title} by ${this.author}, ${this.pages} pages, ${this.isread ? 'read' : 'not read yet'}`;
         
     }
+    
+    toggleReadStatus = function(){
+        this.isread = !this.isread
+    }
 }
 
-Book.prototype.toggleReadStatus = function(){
-    this.isread = !this.isread
-}
 
 function addBookToLibrary(title,author,pages,isread){
     let book = new Book(title,author,pages,isread)
